@@ -1,0 +1,26 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('backgrounds/desktop/bg_desktop_1.svg');
+    background-size: 100% 100%; /* Hier wird das Bild so skaliert, dass es den gesamten Hintergrund abdeckt, ohne dass ein weißer Hintergrund erscheint */
+    background-size: auto; 
+    background-repeat: no-repeat;
+  }
+  
+  @keyframes changeBackground {
+    0% {
+      background-image: url('backgrounds/desktop/bg_desktop_1.svg');
+    }
+    100% {
+      background-image: url('backgrounds/desktop/bg_desktop_2.svg');
+    }
+  }
+  
+  .background {
+    animation: changeBackground 9s forwards;
+    animation-iteration-count: 1;
+  }
+  

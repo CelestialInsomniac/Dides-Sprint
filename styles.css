@@ -1,27 +1,28 @@
-/* Allgemeine Styles */
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-image: url('background.png');
-}
-
-/* Hintergrund 
+/* Gemeinsame Stile für alle Bildschirmgrößen */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image:'background.png';
     background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+    background-size: 100% 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
 
-*/
+/* Hintergrundbilder für Desktop */
+#background {
+    background-image: url('backgrounds/desktop/bg_desktop_1.svg');
+    background-color: #DD9181;
 
-/* Nach 5 Sekunden das Hintergrundbild ändern 
-.change-background {
-    background-image: 'new_background.png' !important;
-}*/
+}
+
+/* Hintergrundbilder für mobile Bildschirme */
+@media only screen and (max-width: 768px) {
+    #background {
+        background-image: url('backgrounds/mobile/bg_mobile_1.svg');
+        background-color: #DD9181;
+        /* Farbe des Hintergrundbilds */
+    }
+}
