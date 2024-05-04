@@ -47,14 +47,14 @@ function startFifthImageTimer() {
         currentIndex = 4; // Wechsle zum fünften Bild
         changeBackground();
         startSixthImageTimer();
-    }, 2000); // Warte 3 Sekunden nach dem vierten Bildwechsel
+    }, 4000); // Warte 3 Sekunden nach dem vierten Bildwechsel
 }
 
 function startSixthImageTimer() {
     timer = setTimeout(function () {
         currentIndex = 5; // Wechsle zum sechsten Bild
         changeBackground();
-    }, 3000); // Warte 3 Sekunden nach dem fünften Bildwechsel
+    }, 5000); // Warte 3 Sekunden nach dem fünften Bildwechsel
 }
 
 function handleClick() {
