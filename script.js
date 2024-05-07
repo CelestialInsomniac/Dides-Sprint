@@ -4,11 +4,10 @@ let currentIndex = 0;
 let timer;
 let isClicked = false;
 
-// Definiere die Hintergrundbilder für Desktop und Mobile
+// Hintergrundbild-Arrays
 let desktopImages = ['backgrounds/desktop/bg_desktop_1.svg', 'backgrounds/desktop/bg_desktop_2.svg', 'backgrounds/desktop/bg_desktop_3.svg', 'backgrounds/desktop/bg_desktop_4.svg', 'backgrounds/desktop/bg_desktop_5.svg', 'backgrounds/desktop/bg_desktop_6.svg'];
 let mobileImages = ['backgrounds/mobile/bg_mobile_1.svg', 'backgrounds/mobile/bg_mobile_2.svg', 'backgrounds/mobile/bg_mobile_3.svg', 'backgrounds/mobile/bg_mobile_4.svg', 'backgrounds/mobile/bg_mobile_5.svg', 'backgrounds/mobile/bg_mobile_6.svg'];
 
-// Verwende die entsprechenden Hintergrundbilder basierend auf der Bildschirmgröße
 let images = window.innerWidth <= 768 ? mobileImages : desktopImages;
 
 function changeBackground() {
@@ -20,41 +19,41 @@ function playTransitionSound() {
 }
 
 function handleFirstClick() {
-    clearTimeout(timer); // Stoppe den Timer für das vierte Bild, falls er noch aktiv ist
-    currentIndex = 2; // Wechsle zum dritten Bild
+    clearTimeout(timer);
+    currentIndex = 2;
     changeBackground();
     startFourthImageTimer();
 }
 
 function handleSecondClick() {
-    currentIndex = 3; // Wechsle zum vierten Bild
+    currentIndex = 3;
     changeBackground();
     startFifthImageTimer();
 }
 
 function startFourthImageTimer() {
     timer = setTimeout(function () {
-        currentIndex = 3; // Wechsle zum vierten Bild
+        currentIndex = 3;
         changeBackground();
-        playTransitionSound(); // Spiele den Übergangssound ab
-        transitionSound.volume = 0.5; // Setze die Lautstärke auf 50%
+        playTransitionSound();
+        transitionSound.volume = 0.5;
         startFifthImageTimer();
-    }, 500); // Warte 2 Sekunden nach dem dritten Bildwechsel
+    }, 500);
 }
 
 function startFifthImageTimer() {
     timer = setTimeout(function () {
-        currentIndex = 4; // Wechsle zum fünften Bild
+        currentIndex = 4;
         changeBackground();
         startSixthImageTimer();
-    }, 4000); // Warte 3 Sekunden nach dem vierten Bildwechsel
+    }, 4000);
 }
 
 function startSixthImageTimer() {
     timer = setTimeout(function () {
-        currentIndex = 5; // Wechsle zum sechsten Bild
+        currentIndex = 5;
         changeBackground();
-    }, 5000); // Warte 3 Sekunden nach dem fünften Bildwechsel
+    }, 5000);
 }
 
 function handleClick() {
@@ -65,9 +64,9 @@ function handleClick() {
 }
 
 timer = setTimeout(function () {
-    currentIndex = 1; // Starte den Timer für das zweite Bild nach 4 Sekunden
+    currentIndex = 1;
     changeBackground();
     background.addEventListener('click', handleClick);
 }, 4000);
 
-changeBackground(); // Initiale Anzeige des ersten Bildes
+changeBackground();
